@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import Counter from "./Components/Task2/Counter";
+import NumbersList from "./Components/Task3/NumbersList";
+import Input from "./Components/Task4/Input";
+import ToDoList from "./Components/Task5/ToDoList";
+import Parent from "./Components/Task6/Parent";
+import { ThemeProvider } from "./ThemeContext";
+import ThemeToggle from "./Components/Task1/ThemeToggle";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <ThemeProvider>
+      <ThemeToggle />
+      <div className="container">
+        <Counter />
+        <NumbersList />
+        <Input />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className="container">
+        <ToDoList />
+        <Parent />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
