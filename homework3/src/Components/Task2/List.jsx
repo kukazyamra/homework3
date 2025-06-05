@@ -1,21 +1,14 @@
 import { memo } from "react";
 
 const List = memo(function List({ increase, decrease }) {
-  console.log("Рендер списка");
+  console.log("Рендер списка с useCallback");
   return (
     <>
-      <p>Список зависим от Counter!</p>
+      <p>В этот список переданы функции с useCallback</p>
       <ul>
-        <li>
-          <button onClick={increase} type="button">
-            Увеличить
-          </button>
-        </li>
-        <li>
-          <button onClick={decrease} type="button">
-            Уменьшить
-          </button>
-        </li>
+        <li>Элемент 1</li>
+        <li>Элемент 2</li>
+        <li>Элемент 3</li>
       </ul>
     </>
   );

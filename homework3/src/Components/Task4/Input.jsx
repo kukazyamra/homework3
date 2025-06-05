@@ -1,12 +1,13 @@
 import { useRef, useState } from "react";
 
 function Input() {
+  console.log('rednder input');
   const [inputValue, setInputValue] = useState("");
   const inputRef = useRef(null);
-  const [previousInputValue, setPreviousInputValue] = useState("");
+  const prevValueRef = useRef(null);
 
   const handleInputChange = (e) => {
-    setPreviousInputValue(inputValue);
+    prevValueRef.current = inputValue;
     setInputValue(e.target.value);
   };
 
@@ -26,7 +27,7 @@ function Input() {
       <button onClick={handleFocusClick} type="button">
         Фокус
       </button>
-      <p>Предыдущее значение: {previousInputValue}</p>
+      <p>Предыдущее значение: {prevValueRef.current}</p>
     </div>
   );
 }
