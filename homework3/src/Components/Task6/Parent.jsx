@@ -1,7 +1,6 @@
 import { useState, useCallback } from "react";
 import MemoGreeting from "./MemoGreeting";
 import Greeting from "./Greeting";
-import MemoGreetingWithoutCallback from "./MemoGreetingWithoutCallback";
 const names = [
   "Артем",
   "Евгений",
@@ -52,8 +51,8 @@ function Parent() {
       </p>
       <div className="container">
         <Greeting name={name} increaseCount={increaseCount} />
-        <MemoGreeting name={name} increaseCount={increaseCount} />
-        <MemoGreetingWithoutCallback name={name} increaseCount={increaseCountWithoutCallback} /> 
+        <MemoGreeting name={name} increaseCount={increaseCount} withCallback={true} />
+        <MemoGreeting name={name} increaseCount={increaseCountWithoutCallback} withCallback={false} /> 
       </div>
     </div>
   );

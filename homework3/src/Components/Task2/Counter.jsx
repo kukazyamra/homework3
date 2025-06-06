@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
 import List from "./List";
-import ListWithoutCallBack from "./ListWithoutCallback";
+
+
 function Counter() {
   console.log("Рендер counter");
   const [count, setCount] = useState(0);
@@ -31,8 +32,8 @@ function Counter() {
       <button type="button" onClick={decreaseCount}>
         Уменьшить
       </button>
-      <List increase={increaseCount} decrease={decreaseCount} />
-      <ListWithoutCallBack increase={increaseCountWithoutCallback} decrease={decreaseCountWithoutCallback} />
+      <List withCallback = {true} increase={increaseCount} decrease={decreaseCount} />
+      <List withCallback = {false} increase={increaseCountWithoutCallback} decrease={decreaseCountWithoutCallback} />
     </div>
   );
 }
